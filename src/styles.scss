@@ -14,3 +14,5 @@
 .default-theme {
   @include angular-material-theme($app-theme);
 }
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
