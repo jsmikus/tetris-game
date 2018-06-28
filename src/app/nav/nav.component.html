@@ -11,13 +11,12 @@
 
 <div class="container">
     <mat-toolbar color="primary">
-        <span>Tetris App</span>
+        <a routerLink="app/home" class="title">Tetris App</a>
     </mat-toolbar>
     <nav mat-tab-nav-bar class="mat-tab-links">
-            <a routerLink="/game">New Game</a>
-            <a routerLink="/rank">Best Scores</a>
-            <a routerLink="/about">How it was created?</a>
+        <a routerLink="app/game">New Game</a>
+        <a routerLink="app/rank">Best Scores</a>
+        <a routerLink="app/about">How it was created?</a>
     </nav>
-    
 <router-outlet></router-outlet>
 </div>
