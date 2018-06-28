@@ -1,6 +1,12 @@
 .container {
-    width: 35vw;
+    width: 35%;
     margin: 0 auto;
+}
+
+.mat-toolbar {
+    background: #24C6DC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #514A9D, #24C6DC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 span {
@@ -8,7 +14,19 @@ span {
     margin: 0 auto;
 }
 
-  nav {
-      margin: 0 auto;
-      display: block;
-  }
+nav {
+    background: #E0EAFC;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #CFDEF3, #E0EAFC);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #CFDEF3, #E0EAFC); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */     
+    height: auto;
+}
+
+a {
+    margin: 5px 10px 5px 10px;
+}
+
+.mat-tab-links {
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+}

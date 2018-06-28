@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <mat-toolbar color="primary">
       <span>Tetris App</span>
   </mat-toolbar>
@@ -7,4 +7,17 @@
       <mat-tab label="Best Scores">Best scores</mat-tab>
       <mat-tab label="How to Play?">How to Play?</mat-tab>
   </mat-tab-group>
+</div> -->
+
+<div class="container">
+    <mat-toolbar color="primary">
+        <span>Tetris App</span>
+    </mat-toolbar>
+    <nav mat-tab-nav-bar class="mat-tab-links">
+            <a routerLink="/game">New Game</a>
+            <a routerLink="/rank">Best Scores</a>
+            <a routerLink="/about">How it was created?</a>
+    </nav>
+    
+<router-outlet></router-outlet>
 </div>
