@@ -1,11 +1,9 @@
-<div class="container">
-    <mat-toolbar color="primary">
+<mat-toolbar color="primary">
         <a routerLink="app/home" class="title">Tetris App</a>
-    </mat-toolbar>
-    <nav mat-tab-nav-bar mat-stretch-tabs>
+</mat-toolbar>
+<nav mat-tab-nav-bar>
         <a mat-tab-link routerLink="app/game">New Game</a>
         <a mat-tab-link routerLink="app/rank">Best Scores</a>
         <a mat-tab-link routerLink="app/about">How it was created?</a>
-    </nav> 
-    <router-outlet></router-outlet>
-</div>
+</nav> 
+<router-outlet></router-outlet>
