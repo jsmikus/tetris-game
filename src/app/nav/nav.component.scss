@@ -1,0 +1,15 @@
+.mat-toolbar {
+    background: #24C6DC; 
+    background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);  
+    background: linear-gradient(to right, #514A9D, #24C6DC);
+    justify-content: center;
+}
+
+.mat-tab-nav-bar {
+    display: flex;
+    justify-content: space-around;
+}
+
+.title {
+    color: white;
+}
