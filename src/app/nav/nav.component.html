@@ -1,22 +1,11 @@
-<!-- <div class="container">
-  <mat-toolbar color="primary">
-      <span>Tetris App</span>
-  </mat-toolbar>
-  <mat-tab-group mat-stretch-tabs class="example-stretched-tabs mat-elevation-z4">
-      <mat-tab label="New Game">New Game</mat-tab>
-      <mat-tab label="Best Scores">Best scores</mat-tab>
-      <mat-tab label="How to Play?">How to Play?</mat-tab>
-  </mat-tab-group>
-</div> -->
-
 <div class="container">
     <mat-toolbar color="primary">
         <a routerLink="app/home" class="title">Tetris App</a>
     </mat-toolbar>
-    <nav mat-tab-nav-bar class="mat-tab-links">
-        <a routerLink="app/game">New Game</a>
-        <a routerLink="app/rank">Best Scores</a>
-        <a routerLink="app/about">How it was created?</a>
-    </nav>
-<router-outlet></router-outlet>
+    <nav mat-tab-nav-bar mat-stretch-tabs>
+        <a mat-tab-link routerLink="app/game">New Game</a>
+        <a mat-tab-link routerLink="app/rank">Best Scores</a>
+        <a mat-tab-link routerLink="app/about">How it was created?</a>
+    </nav> 
+    <router-outlet></router-outlet>
 </div>
