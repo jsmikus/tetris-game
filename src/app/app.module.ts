@@ -1,6 +1,11 @@
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+
+import { AboutRoutingModule } from './about/about-routing.module';
+import { GameRoutingModule } from './game/game-routing.module';
+import { RankRoutingModule } from './rank/rank-routing.module';
+
 import { HomeModule } from './home/home.module';
 import { SharedModule } from './shared/shared.module';
 import { NavComponent } from './nav/nav.component';
@@ -23,6 +28,9 @@ import { GameComponent } from './game/game.component';
   ],
   imports: [
     AppRoutingModule,
+    AboutRoutingModule,
+    GameRoutingModule,
+    RankRoutingModule,
     SharedModule,
     HomeModule,
     MatMenuModule,

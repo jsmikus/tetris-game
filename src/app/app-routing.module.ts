@@ -6,11 +6,7 @@ import { GameComponent } from 'src/app/game/game.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'app/home', pathMatch: 'full' },
-  { path: 'app', redirectTo: 'app/home', pathMatch: 'full' },
-  { path: 'app/game', component: GameComponent, data: { title: 'Let\'s play!' } },
-  { path: 'app/rank', component: RankComponent, data: { title: 'Best Scores' } },
-  { path: 'app/about', component: AboutComponent, data: { title: 'How it was created?' } }
-
+  { path: 'app', redirectTo: 'app/home', pathMatch: 'full' }
 ];
 
 @NgModule({
