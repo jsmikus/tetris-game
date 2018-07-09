@@ -1,22 +1,19 @@
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
+
 import { AppRoutingModule } from './app-routing.module';
+import { AboutRoutingModule } from './modules/about/about-routing.module';
+import { GameRoutingModule } from './modules/game/game-routing.module';
+import { RankRoutingModule } from './modules/rank/rank-routing.module';
 
-import { AboutRoutingModule } from './about/about-routing.module';
-import { GameRoutingModule } from './game/game-routing.module';
-import { RankRoutingModule } from './rank/rank-routing.module';
-
-import { HomeModule } from './home/home.module';
+import { HomeModule } from './modules/home/home.module';
 import { SharedModule } from './shared/shared.module';
-import { NavComponent } from './nav/nav.component';
-import { RankComponent } from './rank/rank.component';
-import { AboutComponent } from './about/about.component';
 
-import { MatMenuModule } from '@angular/material/menu';
-import { MatButtonModule } from '@angular/material/button';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatTabsModule } from '@angular/material/tabs';
-import { GameComponent } from './game/game.component';
+import { NavComponent } from './core/nav/nav.component';
+
+import { AboutComponent } from './modules/about/about.component';
+import { GameComponent } from './modules/game/game.component';
+import { RankComponent } from './modules/rank/rank.component';
 
 @NgModule({
   declarations: [
@@ -32,11 +29,7 @@ import { GameComponent } from './game/game.component';
     GameRoutingModule,
     RankRoutingModule,
     SharedModule,
-    HomeModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatTabsModule
+    HomeModule
   ],
   providers: [],
   bootstrap: [
