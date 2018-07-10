@@ -15,6 +15,8 @@ import { AboutComponent } from './modules/about/about.component';
 import { GameComponent } from './modules/game/game.component';
 import { RankComponent } from './modules/rank/rank.component';
 
+import { MatInputModule, MatTableModule, MatToolbarModule, MatSortModule } from '@angular/material';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,7 +31,11 @@ import { RankComponent } from './modules/rank/rank.component';
     GameRoutingModule,
     RankRoutingModule,
     SharedModule,
-    HomeModule
+    HomeModule,
+    MatInputModule, 
+    MatTableModule, 
+    MatToolbarModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [
