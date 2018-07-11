@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import * as PIXI from 'pixi.js/dist/pixi.js';
 
 @Component({
@@ -6,18 +6,17 @@ import * as PIXI from 'pixi.js/dist/pixi.js';
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss']
 })
-export class GameComponent {
-  title = 'app';
+export class GameComponent implements OnInit{
 
-  constructor() {
-    // Create a Pixi Application
-    const app = new PIXI.Application({width: 600, height: 800});
+  @ViewChild('game')
+  private gameContainer: ElementRef;
 
-    app.renderer.view.style.display = 'block';
-    app.renderer.view.style.margin = 'auto';
+  private app = new PIXI.Application({width: 600, height: 800});
 
-    // Add the canvas that Pixi automatically created for you to the HTML document
-    document.body.appendChild(app.view);
+  constructor(private renderer: Renderer2) {
   }
 
+  ngOnInit(): void {
+      this.renderer.appendChild(this.gameContainer.nativeElement, this.app.view);
+  }
 }
