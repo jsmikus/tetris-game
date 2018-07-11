@@ -10,6 +10,7 @@ import { HomeModule } from './modules/home/home.module';
 import { SharedModule } from './shared/shared.module';
 
 import { NavComponent } from './core/nav/nav.component';
+import { FooterComponent } from './core/footer/footer.component';
 
 import { AboutComponent } from './modules/about/about.component';
 import { GameComponent } from './modules/game/game.component';
@@ -21,7 +22,8 @@ import { RankComponent } from './modules/rank/rank.component';
     NavComponent,
     RankComponent,
     AboutComponent,
-    GameComponent
+    GameComponent,
+    FooterComponent
   ],
   imports: [
     AppRoutingModule,
