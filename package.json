@@ -38,6 +38,7 @@
     "browser-detect": "^0.2.27",
     "font-awesome": "^4.7.0",
     "uuid": "^3.1.0",
+    "pixi.js": "^4.8.1",
     "web-animations-js": "^2.2.5"
   },
   "devDependencies": {
