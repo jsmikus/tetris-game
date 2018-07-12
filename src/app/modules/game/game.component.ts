@@ -6,7 +6,7 @@ import * as PIXI from 'pixi.js/dist/pixi.js';
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss']
 })
-export class GameComponent implements OnInit{
+export class GameComponent implements OnInit {
 
   @ViewChild('game')
   private gameContainer: ElementRef;
