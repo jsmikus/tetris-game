@@ -9,8 +9,8 @@ import { RankRoutingModule } from './modules/rank/rank-routing.module';
 import { HomeModule } from './modules/home/home.module';
 import { SharedModule } from './shared/shared.module';
 
-import { NavComponent } from './core/nav/nav.component';
-import { FooterComponent } from './core/footer/footer.component';
+import { NavComponent } from './shared/components/nav/nav.component';
+import { FooterComponent } from './shared/components/footer/footer.component';
 
 import { AboutComponent } from './modules/about/about.component';
 import { GameComponent } from './modules/game/game.component';
