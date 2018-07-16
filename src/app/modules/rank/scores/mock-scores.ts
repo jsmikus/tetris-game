@@ -1,14 +1,15 @@
 import { Player } from './player';
 
-export const PLAYERS: Player[] = [
-  { id: 1, name: 'Mr. Nice', score: 3525 },
-  { id: 2, name: 'Narco', score: 3525 },
-  { id: 3, name: 'Bombasto', score: 3525 },
-  { id: 4, name: 'Celeritas', score: 3525 },
-  { id: 5, name: 'Magneta', score: 3525 },
-  { id: 6, name: 'RubberMan', score: 3525 },
-  { id: 7, name: 'Dynama', score: 3525 },
-  { id: 8, name: 'Dr IQ', score: 3525 },
-  { id: 9, name: 'Magma', score: 3525 },
-  { id: 10, name: 'Tornado', score: 3525 }
-];
+export const SCORES: Player[] = [
+    {position: 1, name: 'Hydrogen', score: 3354},
+    {position: 2, name: 'Helium', score: 3293},
+    {position: 3, name: 'Lithium', score: 3111},
+    {position: 4, name: 'Beryllium', score: 2993},
+    {position: 5, name: 'Boron', score: 2955},
+    {position: 6, name: 'Carbon', score: 2854},
+    {position: 7, name: 'Nitrogen', score: 2670},
+    {position: 8, name: 'Oxygen', score: 2435},
+    {position: 9, name: 'Fluorine', score: 2137},
+    {position: 10, name: 'Neon', score: 2099},
+    {position: 11, name: 'John', score: 1789}
+  ];

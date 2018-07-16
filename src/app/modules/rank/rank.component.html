@@ -1,29 +1,7 @@
 <div class="container">
 
-  <h1>Check out the hall of fame</h1>
+    <h2>Check out the hall of fame</h2>
+    <app-table></app-table>
 
-<mat-form-field>
-  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Find your position">
-</mat-form-field>
-
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
-  
-    <ng-container matColumnDef="position">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Position </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
-      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="score">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Score </th>
-      <td mat-cell *matCellDef="let element"> {{element.score}} </td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>  
 </div>
+

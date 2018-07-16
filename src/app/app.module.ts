@@ -14,6 +14,7 @@ import { NavComponent } from './core/nav/nav.component';
 import { AboutComponent } from './modules/about/about.component';
 import { GameComponent } from './modules/game/game.component';
 import { RankComponent } from './modules/rank/rank.component';
+import { TableComponent} from './modules/rank/components/table/table.component';
 
 import { MatInputModule, MatTableModule, MatToolbarModule, MatSortModule } from '@angular/material';
 
@@ -23,7 +24,8 @@ import { MatInputModule, MatTableModule, MatToolbarModule, MatSortModule } from 
     NavComponent,
     RankComponent,
     AboutComponent,
-    GameComponent
+    GameComponent,
+    TableComponent
   ],
   imports: [
     AppRoutingModule,
@@ -32,8 +34,8 @@ import { MatInputModule, MatTableModule, MatToolbarModule, MatSortModule } from 
     RankRoutingModule,
     SharedModule,
     HomeModule,
-    MatInputModule, 
-    MatTableModule, 
+    MatInputModule,
+    MatTableModule,
     MatToolbarModule,
     MatSortModule
   ],
