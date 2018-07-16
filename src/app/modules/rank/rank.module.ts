@@ -1,11 +1,12 @@
-import { NgModule } from '@angular/core';
-import { RankRoutingModule } from './rank-routing.module';
-import { RankComponent } from './rank.component';
-import { SharedModule } from '../../shared/shared.module';
+import {NgModule} from '@angular/core';
+import {RankComponent} from './rank.component';
+import {SharedModule} from '../../shared/shared.module';
+import {TableComponent} from './components/table/table.component';
 
 @NgModule({
   declarations: [
-    RankComponent
+    RankComponent,
+    TableComponent
   ],
   imports: [
     RankModule,
