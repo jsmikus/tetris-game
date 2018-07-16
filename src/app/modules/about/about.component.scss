@@ -1,79 +1,32 @@
-.container {
-    text-align: left;
-    width: 60%;
 
     h2 {
         margin-top: 25px;
+        margin-bottom: 25px;
         text-align: center;
     }
 
     h3 {
         margin-top: 25px;
+        margin-bottom: 25px;
         text-align: center;
     }
 
-    span {
-        text-align: center;
-        font-style: italic;
-    }
-
-    .mat-chip-list-wrapper {
-        justify-content: center;
-    }
-
-        .css {
-            background-color: #1b73ba;
-            color: white;
-        }
-        
-        .html {
-            background-color: #e44d26;
-            color: white;
-        }
-        
-        .js {
-            background-color: #f0db4f;
-            color: black;
-        }
-        
-        .ts {
-            background-color: #007acc;
-            color: white;
-        }
-        
-        .sass {
-            background-color: #cd6799;
-            color: white;
-        }
-        
-        .angular {
-            background-color: #dd0031;
-            color: white;
-        }
-        
-        .pixi {
-            background-color: #272a34;
-            color: #e91e63;
-        }
-        
-        .firebase {
-            background-color: #ffcb2c;
-            color: #7a7a7a;
-        }
-
-        .mat-raised-button {
-            margin-right: 10px;
-            margin-bottom: 15px;
-        }
-
-        .linkedin {
-            background-color: #0274b3;
-            color: white;
-        }
-
-        .github {
-            background-color: #323131;
-            color: white;
-        }
+.button-row {
+    text-align: center;
 }
 
+.mat-panel-description {
+    justify-content: left;
+}
+
+.row {
+    margin-top: 2rem;
+}
+
+.about {
+    margin-left: 1rem;
+}
+
+span {
+    border-bottom: solid 6px rgba(36, 199, 220, 0.589);
+}
