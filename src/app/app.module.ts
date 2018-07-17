@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AboutRoutingModule } from './modules/about/about-routing.module';
 import { GameRoutingModule } from './modules/game/game-routing.module';
 import { RankRoutingModule } from './modules/rank/rank-routing.module';
+import { LoginRoutingModule } from './login/login-routing.module';
 
 import { HomeModule } from './modules/home/home.module';
 import { SharedModule } from './shared/shared.module';
@@ -18,6 +19,7 @@ import { TableComponent} from './modules/rank/components/table/table.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 
 import { MatInputModule, MatTableModule, MatToolbarModule, MatSortModule } from '@angular/material';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,13 +29,15 @@ import { MatInputModule, MatTableModule, MatToolbarModule, MatSortModule } from 
     AboutComponent,
     GameComponent,
     TableComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     AppRoutingModule,
     AboutRoutingModule,
     GameRoutingModule,
     RankRoutingModule,
+    LoginRoutingModule,
     SharedModule,
     HomeModule,
     MatInputModule,
