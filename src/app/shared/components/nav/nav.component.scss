@@ -2,7 +2,15 @@
     background: #24C6DC; 
     background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);  
     background: linear-gradient(to right, #514A9D, #24C6DC);
-    justify-content: center;
+    justify-content: space-between;
+}
+
+.mat-button:hover {
+    color: #24C6DC;
+}
+
+.mat-button {
+    background: #1b73ba;
 }
 
 .mat-tab-nav-bar {
@@ -10,6 +18,16 @@
     justify-content: space-around;
 }
 
-.title {
-    color: white;
+img {
+    height: 45px;
+}
+
+i {
+    margin-right: 5px;
+}
+
+span {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 1px;
 }
