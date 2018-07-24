@@ -21,6 +21,12 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { MatInputModule, MatTableModule, MatToolbarModule, MatSortModule } from '@angular/material';
 import { LoginComponent } from './login/login.component';
 
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AuthService } from './services/auth.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,9 +49,12 @@ import { LoginComponent } from './login/login.component';
     MatInputModule,
     MatTableModule,
     MatToolbarModule,
-    MatSortModule
+    MatSortModule,
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [
     AppComponent
   ]

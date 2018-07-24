@@ -1,15 +1,39 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss']
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+    user = null;
 
-  ngOnInit() {
-  }
+    constructor(private authService: AuthService, private router: Router) {
+    }
+
+    signInWithFacebook() {
+        this.authService.signInWithFacebook()
+            .then((res) => {
+                this.router.navigate(['dashboard'])
+            })
+            .catch((err) => console.log(err));
+    }
+
+
+    signInWithGoogle() {
+        this.authService.signInWithGoogle()
+            .then((res) => {
+                this.router.navigate(['dashboard'])
+            })
+            .catch((err) => console.log(err));
+    }
+
+
+
+    ngOnInit() {
+    }
 
 }
