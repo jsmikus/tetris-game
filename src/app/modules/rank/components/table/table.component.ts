@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { DataSource } from '@angular/cdk/collections';
+import { ScoresService} from '../../service/scores.service';
 import { MatSort, MatTableDataSource } from '@angular/material';
-
-import { Player } from '../../scores/player';
-import { ScoresService } from '../../service/scores.service';
-import { SCORES } from '../../scores/mock-scores';
 
 @Component({
   selector: 'app-table',
@@ -12,25 +11,29 @@ import { SCORES } from '../../scores/mock-scores';
 })
 export class TableComponent implements OnInit {
 
-    scores: Player[];
-    displayedColumns: string[] = ['position', 'name', 'score'];
-    dataSource = new MatTableDataSource(SCORES);
-
-    constructor(private scoresService: ScoresService) { }
-
-    @ViewChild(MatSort) sort: MatSort;
-
-    applyFilter(filterValue: string) {
-        this.dataSource.filter = filterValue.trim().toLowerCase();
+    playerDetails = {
+        playerName: '',
+        playerScore: ''
     }
 
-    ngOnInit() {
-        this.dataSource.sort = this.sort;
-        this.getScores();
+    displayedColumns: string[] = ['position', 'name', 'score']
+    dataSource = new PlayerDataSource(this.player);
+
+    constructor(private player: ScoresService, private afs: AngularFirestore) {
+
     }
 
-    getScores(): void {
-        this.scoresService.getScores()
-            .subscribe(scores => this.scores = scores);
+export class PlayerDataSource extends DataSource<any> {
+
+    constructor(private player: ScoresService) {
+        super()
+    }
+
+    connect() {
+        return this.player.getPlayers();
+    }
+
+    disconnect() {
+
     }
 }

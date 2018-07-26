@@ -1,18 +1,12 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { AngularFirestore } from 'angularfire2/firestore';
 
-import { Player } from '../scores/player';
-import { SCORES } from '../scores/mock-scores';
-
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ScoresService {
 
-  constructor() { }
+    constructor(private afs: AngularFirestore) { }
 
-  getScores(): Observable<Player[]> {
-    return of(SCORES);
-  }
-
+    getPlayers() {
+        return this.afs.collection('players', ref => ref.orderBy('playerScore', 'desc')).valueChanges();
+    }
 }
