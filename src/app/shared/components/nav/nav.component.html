@@ -1,5 +1,6 @@
 <mat-toolbar color="primary">
         <a routerLink="app/home" class="title"><img src="../../../../assets/tetris-app-logo.png"></a>
+        <span class="mat-typography">{{user?.displayName}}</span>
         <span>Playing Tetris for 15 minutes is like meditation. Let's <a routerLink="app/login" mat-button><i class="fa fa-power-off"></i>login</a> and meditate!</span>
 </mat-toolbar>
 <nav mat-tab-nav-bar>

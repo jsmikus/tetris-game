@@ -1,39 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { User } from "firebase/auth";
 
 @Component({
     selector: 'app-login',
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
-
-    user = null;
+export class LoginComponent {
 
     constructor(private authService: AuthService, private router: Router) {
     }
 
     signInWithFacebook() {
         this.authService.signInWithFacebook()
-            .then((res) => {
-                this.router.navigate(['dashboard'])
-            })
-            .catch((err) => console.log(err));
+            .then(() => this.router.navigate(['app/home']))
+            .catch(error => console.log(error));
     }
 
 
     signInWithGoogle() {
         this.authService.signInWithGoogle()
-            .then((res) => {
-                this.router.navigate(['dashboard'])
-            })
-            .catch((err) => console.log(err));
+            .then(() => this.router.navigate(['app/home']))
+            .catch(error => console.log(error));
     }
-
-
-
-    ngOnInit() {
-    }
-
 }
