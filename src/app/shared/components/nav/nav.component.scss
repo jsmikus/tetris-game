@@ -26,8 +26,33 @@ i {
     margin-right: 5px;
 }
 
-span {
+.login:hover {
+  color: lightgreen;
+}
+
+.logout:hover {
+  color: red;
+}
+
+.logged-in {
     font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: white;
     margin-top: 1px;
+    text-align: right;
+}
+
+.username {
+    color: white;
+    font-weight: 900;
+    border-bottom: 4px solid lightgreen;
+}
+
+.not-logged-in {
+    font-size: 0.9rem;
+    color: white;
+    margin-top: 1px;
+}
+
+button {
+  margin-left: 0.5rem;
 }
