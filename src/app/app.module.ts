@@ -19,6 +19,11 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 
 import { MatInputModule, MatTableModule, MatToolbarModule, MatSortModule } from '@angular/material';
 
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { environment } from '../environments/environment';
+import { ScoresService} from './modules/rank/service/scores.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,9 +44,11 @@ import { MatInputModule, MatTableModule, MatToolbarModule, MatSortModule } from 
     MatInputModule,
     MatTableModule,
     MatToolbarModule,
-    MatSortModule
+    MatSortModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule.enablePersistence()
   ],
-  providers: [],
+  providers: [ScoresService],
   bootstrap: [
     AppComponent
   ]

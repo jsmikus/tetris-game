@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+    firebase: {
+        apiKey: "AIzaSyAjMwJeFnW9I17Bi0DDmRngMy9MgkfNzJM",
+        authDomain: "tetris-app.firebaseapp.com",
+        databaseURL: "https://tetris-app.firebaseio.com",
+        projectId: "tetris-app",
+        storageBucket: "tetris-app.appspot.com",
+        messagingSenderId: "756582346079"
+    }
 };
 
 /*
