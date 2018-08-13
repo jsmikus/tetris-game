@@ -1,0 +1,58 @@
+.mat-toolbar {
+  background: #24C6DC;
+  background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);
+  background: linear-gradient(to right, #514A9D, #24C6DC);
+  justify-content: space-between;
+}
+
+.mat-button:hover {
+  color: #24C6DC;
+}
+
+.mat-button {
+  background: #1b73ba;
+}
+
+.mat-tab-nav-bar {
+  display: flex;
+  justify-content: space-around;
+}
+
+img {
+  height: 45px;
+}
+
+i {
+  margin-right: 5px;
+}
+
+.login:hover {
+  color: lightgreen;
+}
+
+.logout:hover {
+  color: red;
+}
+
+.logged-in {
+  font-size: 0.9rem;
+  color: white;
+  margin-top: 1px;
+  text-align: right;
+}
+
+.username {
+  color: white;
+  font-weight: 900;
+  border-bottom: 4px solid lightgreen;
+}
+
+.not-logged-in {
+  font-size: 0.9rem;
+  color: white;
+  margin-top: 1px;
+}
+
+button {
+  margin-left: 0.5rem;
+}

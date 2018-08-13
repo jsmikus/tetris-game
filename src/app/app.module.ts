@@ -11,6 +11,7 @@ import { HomeModule } from './modules/home/home.module';
 import { SharedModule } from './shared/shared.module';
 
 import { NavComponent } from 'src/app/shared/components/nav/nav.component';
+import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
 
 import { AboutComponent } from './modules/about/about.component';
 import { GameComponent } from './modules/game/game.component';
@@ -33,6 +34,7 @@ import { ScoresService} from './modules/rank/service/scores.service';
   declarations: [
     AppComponent,
     NavComponent,
+    ToolbarComponent,
     RankComponent,
     AboutComponent,
     GameComponent,

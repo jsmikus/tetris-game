@@ -1,0 +1,6 @@
+<mat-toolbar color="primary">
+    <a routerLink="app/home" class="title"><img src="../../../../assets/tetris-app-logo.png"></a>
+    <span class="not-logged-in" *ngIf="!user">Playing Tetris for 15 minutes is like meditation. Let's <a routerLink="app/login" mat-button><i class="fa fa-power-off login"></i>login</a> and meditate!</span>
+
+    <span class="logged-in" *ngIf="user">Well done! You are logged in as <span class="username">{{user?.displayName}}</span><button mat-button (click)="logout()"><i class="fa fa-power-off logout"></i>logout</button></span>
+</mat-toolbar>
