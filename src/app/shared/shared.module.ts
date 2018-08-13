@@ -17,6 +17,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -45,7 +46,8 @@ import { CoreModule } from '../core/core.module';
     MatMenuModule,
     MatIconModule,
     MatTooltipModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatExpansionModule
   ],
   exports: [
     CommonModule,
@@ -69,6 +71,7 @@ import { CoreModule } from '../core/core.module';
     MatIconModule,
     MatTooltipModule,
     MatSnackBarModule,
+    MatExpansionModule
   ]
 })
 export class SharedModule {
