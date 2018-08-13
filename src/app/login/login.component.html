@@ -1,20 +1,19 @@
 <div class="container">
 
-<mat-card class="example-card">
+    <mat-card class="example-card">
 
-  <mat-card-header>
-    <mat-card-title><span>Let's login</span></mat-card-title>
-    <mat-card-subtitle>Use below accounts to store the results</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="assets/tetris-login-cover.png" alt="Cover photo of login page">
-  <mat-card-actions>
-    <button class="loginBtn loginBtn--facebook" (click)="signInWithFacebook()">
-      Login with Facebook
-    </button>
-
-    <button class="loginBtn loginBtn--google" (click)="signInWithGoogle()">
-      Login with Google
-    </button>
-  </mat-card-actions>
-</mat-card>
+        <mat-card-header>
+            <mat-card-title><span>Let's login</span></mat-card-title>
+            <mat-card-subtitle>Use below accounts to store the results</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="assets/tetris-login-cover.png" alt="Cover photo of login page">
+        <mat-card-actions>
+            <button class="facebook" mat-raised-button color="primary" (click)="signInWithFacebook()"><i
+                    class="fa fa-facebook-f"></i>Facebook Login
+            </button>
+            <button class="google" mat-raised-button color="accent" (click)="signInWithGoogle()"><i
+                    class="fa fa-google"></i>Google Login
+            </button>
+        </mat-card-actions>
+    </mat-card>
 </div>
