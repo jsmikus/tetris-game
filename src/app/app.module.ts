@@ -54,7 +54,7 @@ import { ScoresService} from './modules/rank/service/scores.service';
     MatSortModule,
     AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
     AngularFireDatabaseModule,
-    AngularFirestoreModule.enablePersistence()
+    AngularFirestoreModule.enablePersistence(),
     AngularFireAuthModule
   ],
   providers: [ScoresService, AuthService],
