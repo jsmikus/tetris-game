@@ -1,8 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RankComponent } from 'src/app/modules/rank/rank.component';
-import { AboutComponent } from 'src/app/modules/about/about.component';
-import { GameComponent } from 'src/app/modules/game/game.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'app/home', pathMatch: 'full' },
@@ -10,7 +7,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
+  imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule {}

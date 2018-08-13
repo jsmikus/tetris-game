@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AboutRoutingModule } from './modules/about/about-routing.module';
 import { GameRoutingModule } from './modules/game/game-routing.module';
 import { RankRoutingModule } from './modules/rank/rank-routing.module';
+import { LoginRoutingModule } from './login/login-routing.module';
 
 import { HomeModule } from './modules/home/home.module';
 import { SharedModule } from './shared/shared.module';
@@ -18,10 +19,14 @@ import { TableComponent} from './modules/rank/components/table/table.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 
 import { MatInputModule, MatTableModule, MatToolbarModule, MatSortModule } from '@angular/material';
+import { LoginComponent } from './login/login.component';
 
-import { AngularFireModule } from 'angularfire2';
-import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AuthService } from './services/auth.service';
 import { ScoresService} from './modules/rank/service/scores.service';
 
 @NgModule({
@@ -32,23 +37,27 @@ import { ScoresService} from './modules/rank/service/scores.service';
     AboutComponent,
     GameComponent,
     TableComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent
   ],
   imports: [
     AppRoutingModule,
     AboutRoutingModule,
     GameRoutingModule,
     RankRoutingModule,
+    LoginRoutingModule,
     SharedModule,
     HomeModule,
     MatInputModule,
     MatTableModule,
     MatToolbarModule,
     MatSortModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
+    AngularFireDatabaseModule,
     AngularFirestoreModule.enablePersistence()
+    AngularFireAuthModule
   ],
-  providers: [ScoresService],
+  providers: [ScoresService, AuthService],
   bootstrap: [
     AppComponent
   ]
