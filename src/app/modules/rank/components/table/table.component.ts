@@ -8,6 +8,7 @@ import { ScoresService } from '../../service/scores.service';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements AfterViewInit {
+    showSpinner: boolean = true;
 
     displayedColumns: string[] = ['playerPosition', 'playerName', 'playerScore'];
     dataSource: MatTableDataSource<any>;
@@ -24,6 +25,7 @@ export class TableComponent implements AfterViewInit {
             this.dataSource = new MatTableDataSource(data);
             this.dataSource.sort = this.sort;
             this.dataSource.paginator = this.paginator;
+            this.showSpinner = false;
         });
     }
 

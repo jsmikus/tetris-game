@@ -1,27 +1,27 @@
-<mat-form-field>
-    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Find your position">
-</mat-form-field>
+<app-loading-spinner *ngIf="showSpinner"></app-loading-spinner>
+    <mat-form-field *ngIf="!showSpinner">
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Find your position">
+    </mat-form-field>
 
-<div class="example-container mat-elevation-z8">
-    <mat-table #table [dataSource]="dataSource" matSort>
+    <div class="example-container mat-elevation-z8" *ngIf="!showSpinner">
+        <mat-table #table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="playerPosition">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Position </mat-header-cell>
+                <mat-cell *matCellDef="let player; let i = index;">{{i+1}}</mat-cell>
+            </ng-container>
 
-        <ng-container matColumnDef="playerPosition">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Position </mat-header-cell>
-            <mat-cell *matCellDef="let player; let i = index;">{{i+1}}</mat-cell>
-        </ng-container>
+            <ng-container matColumnDef="playerName">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+                <mat-cell *matCellDef="let player"> {{player.playerName}} </mat-cell>
+            </ng-container>
 
-        <ng-container matColumnDef="playerName">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
-            <mat-cell *matCellDef="let player"> {{player.playerName}} </mat-cell>
-        </ng-container>
+            <ng-container matColumnDef="playerScore">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Score </mat-header-cell>
+                <mat-cell *matCellDef="let player"> {{player.playerScore}} </mat-cell>
+            </ng-container>
 
-        <ng-container matColumnDef="playerScore">
-            <mat-header-cell *matHeaderCellDef mat-sort-header> Score </mat-header-cell>
-            <mat-cell *matCellDef="let player"> {{player.playerScore}} </mat-cell>
-        </ng-container>
-
-        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-    </mat-table>
-    <mat-paginator [pageSizeOptions]="[10, 25, 100]" showFirstLastButtons></mat-paginator>
-</div>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <mat-paginator [pageSizeOptions]="[10, 25, 100]" showFirstLastButtons></mat-paginator>
+    </div>
