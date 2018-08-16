@@ -1,39 +1,35 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { AngularFirestore } from 'angularfire2/firestore';
-import { DataSource } from '@angular/cdk/collections';
-import { ScoresService} from '../../service/scores.service';
-import { MatSort, MatTableDataSource } from '@angular/material';
+import { Component, AfterViewInit, ViewChild } from '@angular/core';
+import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
+import { ScoresService } from '../../service/scores.service';
 
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent implements OnInit {
+export class TableComponent implements AfterViewInit {
 
-    playerDetails = {
-        playerName: '',
-        playerScore: ''
+    displayedColumns: string[] = ['playerPosition', 'playerName', 'playerScore'];
+    dataSource: MatTableDataSource<any>;
+
+    @ViewChild(MatSort) sort: MatSort;
+    @ViewChild(MatPaginator) paginator: MatPaginator;
+
+    constructor(private players: ScoresService) {
+        this.players.getPlayers();
     }
 
-    displayedColumns: string[] = ['position', 'name', 'score']
-    dataSource = new PlayerDataSource(this.player);
-
-    constructor(private player: ScoresService, private afs: AngularFirestore) {
-
+    ngAfterViewInit() {
+        this.players.getPlayers().subscribe(data => {
+            this.dataSource = new MatTableDataSource(data);
+            this.dataSource.sort = this.sort;
+            this.dataSource.paginator = this.paginator;
+        });
     }
 
-export class PlayerDataSource extends DataSource<any> {
-
-    constructor(private player: ScoresService) {
-        super()
-    }
-
-    connect() {
-        return this.player.getPlayers();
-    }
-
-    disconnect() {
-
+    applyFilter(filterValue: string) {
+        filterValue = filterValue.trim();
+        filterValue = filterValue.toLowerCase();
+        this.dataSource.filter = filterValue;
     }
 }

@@ -1,28 +1,27 @@
+<mat-form-field>
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Find your position">
+</mat-form-field>
+
 <div class="example-container mat-elevation-z8">
-    <mat-table #table [dataSource]="dataSource">
+    <mat-table #table [dataSource]="dataSource" matSort>
 
-        <!--- Note that these columns can be defined in any order.
-              The actual rendered columns are set as a property on the row definition" -->
-
-        <!-- Position Column -->
-        <ng-container matColumnDef="position">
-            <mat-header-cell *matHeaderCellDef> Position </mat-header-cell>
-            <mat-cell *matCellDef="let element; let i = index;"> {{i+1}}</mat-cell>
+        <ng-container matColumnDef="playerPosition">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Position </mat-header-cell>
+            <mat-cell *matCellDef="let player; let i = index;">{{i+1}}</mat-cell>
         </ng-container>
 
-        <!-- Name Column -->
-        <ng-container matColumnDef="name">
-            <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <ng-container matColumnDef="playerName">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
             <mat-cell *matCellDef="let player"> {{player.playerName}} </mat-cell>
         </ng-container>
 
-        <!-- Score Column -->
-        <ng-container matColumnDef="score">
-            <mat-header-cell *matHeaderCellDef> Score </mat-header-cell>
+        <ng-container matColumnDef="playerScore">
+            <mat-header-cell *matHeaderCellDef mat-sort-header> Score </mat-header-cell>
             <mat-cell *matCellDef="let player"> {{player.playerScore}} </mat-cell>
         </ng-container>
 
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
     </mat-table>
+    <mat-paginator [pageSizeOptions]="[10, 25, 100]" showFirstLastButtons></mat-paginator>
 </div>

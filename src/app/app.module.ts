@@ -16,10 +16,10 @@ import { ToolbarComponent } from './shared/components/toolbar/toolbar.component'
 import { AboutComponent } from './modules/about/about.component';
 import { GameComponent } from './modules/game/game.component';
 import { RankComponent } from './modules/rank/rank.component';
-import { TableComponent} from './modules/rank/components/table/table.component';
+import { TableComponent } from './modules/rank/components/table/table.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 
-import { MatInputModule, MatTableModule, MatToolbarModule, MatSortModule } from '@angular/material';
+import { MatInputModule, MatTableModule, MatToolbarModule, MatSortModule, MatFormFieldModule, MatPaginatorModule } from '@angular/material';
 import { LoginComponent } from './login/login.component';
 
 import { environment } from '../environments/environment';
@@ -54,6 +54,9 @@ import { ScoresService} from './modules/rank/service/scores.service';
     MatTableModule,
     MatToolbarModule,
     MatSortModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatPaginatorModule,
     AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
     AngularFireDatabaseModule,
     AngularFirestoreModule.enablePersistence(),
