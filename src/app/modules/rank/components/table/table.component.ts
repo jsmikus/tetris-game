@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource, MatSort, MatPaginator } from '@angular/material';
 import { ScoresService } from '../../service/scores.service';
 
@@ -7,7 +7,7 @@ import { ScoresService } from '../../service/scores.service';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.scss']
 })
-export class TableComponent implements AfterViewInit {
+export class TableComponent implements OnInit {
     showSpinner: boolean = true;
 
     displayedColumns: string[] = ['playerPosition', 'playerName', 'playerScore'];
@@ -20,7 +20,7 @@ export class TableComponent implements AfterViewInit {
         this.players.getPlayers();
     }
 
-    ngAfterViewInit() {
+    ngOnInit() {
         this.players.getPlayers().subscribe(data => {
             this.dataSource = new MatTableDataSource(data);
             this.dataSource.sort = this.sort;
