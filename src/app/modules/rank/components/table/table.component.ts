@@ -16,12 +16,11 @@ export class TableComponent implements OnInit {
     @ViewChild(MatSort) sort: MatSort;
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
-    constructor(private players: ScoresService) {
-        this.players.getPlayers();
+    constructor(private scoresService: ScoresService) {
     }
 
     ngOnInit() {
-        this.players.getPlayers().subscribe(data => {
+        this.scoresService.getPlayers().subscribe(data => {
             this.dataSource = new MatTableDataSource(data);
             this.dataSource.sort = this.sort;
             this.dataSource.paginator = this.paginator;

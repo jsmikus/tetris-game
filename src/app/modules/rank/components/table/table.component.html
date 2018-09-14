@@ -5,9 +5,10 @@
 
     <div class="example-container mat-elevation-z8" *ngIf="!showSpinner">
         <mat-table #table [dataSource]="dataSource" matSort>
+
             <ng-container matColumnDef="playerPosition">
                 <mat-header-cell *matHeaderCellDef mat-sort-header> Position </mat-header-cell>
-                <mat-cell *matCellDef="let player; let i = index;">{{i+1}}</mat-cell>
+                <mat-cell *matCellDef="let player"> {{player.playerPosition}} </mat-cell>
             </ng-container>
 
             <ng-container matColumnDef="playerName">
