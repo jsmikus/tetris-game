@@ -11,7 +11,7 @@ export class ScoresService {
     getPlayers(): Observable<Player[]>{
         return this.afs.collection('players', ref => ref.orderBy('playerScore', 'desc'))
             .valueChanges()
-            .pipe(map(data=> data.map((playerData, index) => <Player>{playerPosition: index + 1, ...playerData})));
+            .pipe(map(data => data.map((playerData, index) => <Player>{playerPosition: index + 1, ...playerData})));
     }
 }
 
